@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingPDFs", "CreatingPDFs\CreatingPDFs.csproj", "{04AAF2A2-44B6-4EF8-B865-2BF6D1676017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test1", "test1\test1.csproj", "{7786A1AA-87F8-4FF6-A0B7-559ABB8A3E33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTextSharpTutorial", "..\iTextSharpTutorial\iTextSharpTutorial\iTextSharpTutorial.csproj", "{45C3F7F5-5BF3-4F6D-A7E8-6D11E8F458C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04AAF2A2-44B6-4EF8-B865-2BF6D1676017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AAF2A2-44B6-4EF8-B865-2BF6D1676017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AAF2A2-44B6-4EF8-B865-2BF6D1676017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AAF2A2-44B6-4EF8-B865-2BF6D1676017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7786A1AA-87F8-4FF6-A0B7-559ABB8A3E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7786A1AA-87F8-4FF6-A0B7-559ABB8A3E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7786A1AA-87F8-4FF6-A0B7-559ABB8A3E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7786A1AA-87F8-4FF6-A0B7-559ABB8A3E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C3F7F5-5BF3-4F6D-A7E8-6D11E8F458C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C3F7F5-5BF3-4F6D-A7E8-6D11E8F458C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C3F7F5-5BF3-4F6D-A7E8-6D11E8F458C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C3F7F5-5BF3-4F6D-A7E8-6D11E8F458C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

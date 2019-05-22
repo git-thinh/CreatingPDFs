@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Invoice>
+  <invoice_header>
+    
+    <invoiceId>123456</invoiceId>
+    <invoiceType>DEBIT INVOICE</invoiceType>
+    <invoiceDate>2011-01-01</invoiceDate>
+    <dueDate>2011-02-01</dueDate>
+    <customerId>ALFKI</customerId>
+    <delCustomerName>Micke Blomquist Ltd</delCustomerName>
+    <delAddress1>Att: Micke Blomquist</delAddress1>
+    <delAddress2>Blomquist Street 123</delAddress2>
+    <delAddress3>Blomquist Residence</delAddress3>
+    <delZipcode>SE-692 71</delZipcode>
+    <delCity>Kumla</delCity>
+    <delCountry>Sweden</delCountry>
+    <invCustomerName>Micke Blomquist Ltd</invCustomerName>
+    <invAddress1>Att: Micke Blomquist</invAddress1>
+    <invAddress2>Blomquist Street 123</invAddress2>
+    <invAddress3>Blomquist Residence</invAddress3>
+    <invZipcode>SE-692 71</invZipcode>
+    <invCity>Kumla</invCity>
+    <invCountry>Sweden</invCountry>
+
+    <payTerms>30 Days net</payTerms>
+    <delTerms>Free Delivered</delTerms>
+    <delTransportTerms>DoorToDoor Delivery</delTransportTerms>
+    
+    <orderreference>New server room</orderreference>
+    <customerMarking>My wishlist...</customerMarking>
+    <salesman>Micke Blomquist</salesman>
+  </invoice_header>
+  <invoice_rows>
+    <invoiceId>123456</invoiceId>
+    <rowId>1</rowId>
+    <itemId>5010464384</itemId>
+    <itemDescription>HP PROLIANT DL580 G7 XEON 7560 4X2.26-24MB 64GB/0</itemDescription>
+    <invoicedQuantity>1</invoicedQuantity>
+    <unit>PCS</unit>
+    <price>223555</price>
+    <currency>SEK</currency>
+  </invoice_rows>
+  <invoice_rows>
+    <invoiceId>123456</invoiceId>
+    <rowId>2</rowId>
+    <itemId>5010471493</itemId>
+    <itemDescription>HP PROLIANT DL585 G7 4P OPT 6176SE 2.3-12MB 64GB P410I/1GB FBWC</itemDescription>
+    <invoicedQuantity>2</invoicedQuantity>
+    <unit>PCS</unit>
+    <price>116225</price>
+    <currency>SEK</currency>
+  </invoice_rows>
+  <invoice_rows>
+    <invoiceId>123456</invoiceId>
+    <rowId>3</rowId>
+    <itemId>5010465931</itemId>
+    <itemDescription>CISCO 2951 ROUTER VOICE BUNDLE</itemDescription>
+    <invoicedQuantity>1</invoicedQuantity>
+    <unit>PCS</unit>
+    <price>39196</price>
+    <currency>SEK</currency>
+  </invoice_rows>
+  <invoice_rows>
+    <invoiceId>123456</invoiceId>
+    <rowId>4</rowId>
+    <itemId>5010309251</itemId>
+    <itemDescription>HP PROCURVE NETWORK IMMUNITY MANAGER 2.0 UNLIMITED DEV</itemDescription>
+    <invoicedQuantity>1</invoicedQuantity>
+    <unit>PCS</unit>
+    <price>316535</price>
+    <currency>SEK</currency>
+  </invoice_rows>
+  <invoice_total>
+    <invoiceId>123456</invoiceId>
+    <invoicedAmount>695511</invoicedAmount>
+    <VAT>139102</VAT>
+    <freightCharge>10000</freightCharge>
+    <totalAmount>844613</totalAmount>
+    <currency>SEK</currency>
+  </invoice_total>
+  <invoice_payeeinfo>
+    <supplier>FAKE COMPUTER PARTS LTD</supplier>
+    <address1>Fake City</address1>
+    <address2>Fake Street</address2>
+    <address3>Second floor, third door down</address3>
+    <zip>SE-123 45</zip>
+    <city>Fabricated Town</city>
+    <country>Sweden</country>
+    <phone>+1 111 111 111</phone>
+    <mail>info@mbase.se</mail>
+    <web>http://www.mbase.se</web>
+    <xtrainfo>He, he...we're not!</xtrainfo>
+  </invoice_payeeinfo>
+</Invoice>

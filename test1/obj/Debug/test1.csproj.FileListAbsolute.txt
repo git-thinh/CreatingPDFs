@@ -1,0 +1,6 @@
+C:\Download\pdf\CreatingPDFs\test1\bin\Debug\test1.exe
+C:\Download\pdf\CreatingPDFs\test1\bin\Debug\test1.pdb
+C:\Download\pdf\CreatingPDFs\test1\bin\Debug\itextsharp.dll
+C:\Download\pdf\CreatingPDFs\test1\obj\Debug\test1.csprojResolveAssemblyReference.cache
+C:\Download\pdf\CreatingPDFs\test1\obj\Debug\test1.exe
+C:\Download\pdf\CreatingPDFs\test1\obj\Debug\test1.pdb
