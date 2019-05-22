@@ -11,7 +11,37 @@ namespace test1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) {
+
+        }
+
+        static void test_2() {
+            byte[] pdf; // result will be here
+
+            var cssText = File.ReadAllText(@"pdf\asset\PawnInsurrance\PawnInsurrance.css");
+            var html = File.ReadAllText(@"pdf\giay-yeu-cau-bao-hiem.html");
+
+            using (var memoryStream = new MemoryStream())
+            {
+                var document = new Document(PageSize.A4, 50, 50, 60, 60);
+                var writer = PdfWriter.GetInstance(document, memoryStream);
+                document.Open();
+
+                using (var cssMemoryStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(cssText)))
+                {
+                    using (var htmlMemoryStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(html)))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, htmlMemoryStream, cssMemoryStream);
+                    }
+                }
+
+                document.Close();
+
+                pdf = memoryStream.ToArray();
+            }
+        }
+
+        static void test_1()
         {
             //Create our document object
             Document Doc = new Document(PageSize.LETTER);

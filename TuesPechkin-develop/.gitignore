@@ -1,0 +1,15 @@
+.vs/
+
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+packages
+bin
+obj
+_ReSharper.*
+.svn
+*.user
+*.suo
+
+# mstest test results
+TestResults
+*.nupkg
+*.nuspec

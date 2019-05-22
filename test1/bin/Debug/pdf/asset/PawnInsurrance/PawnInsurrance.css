@@ -1,0 +1,63 @@
+﻿body {
+    font-family: Arial, sans-serif; margin:0px; padding: 0px;
+        font-size: 16pt; line-height: 18px;
+}
+h1,h2,h3,h4,h5,h6,p,ul,li{ margin:0; padding: 0;}
+p.breakhere {
+    page-break-before: always;
+    height: 1% !important;
+    margin: 0;
+    padding: 0;
+}
+
+.italic{
+    font-style: italic;
+}
+
+media print {
+    a [href]:after;
+
+{
+    content: none !important;
+}
+
+}
+.sheet {
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+}
+.page-header{height: 80px; padding: 8px 0;}
+.page-footer{height: 72px; padding: 8px 0;}
+.page-footer {position: fixed;bottom: 0; width: 100%;}
+.page-header {position: fixed;top: 0mm; width: 100%;}
+.page {page-break-after: always;}
+.page-header img{max-width: calc(100% - 20mm);}
+.page-footer img{max-width: calc(100% - 20mm);}
+@media print {
+   thead {display: table-header-group;}
+   tfoot {display: table-footer-group;}
+
+   button {display: none;}
+
+   body {margin: 0;}
+}
+/** Paper sizes **/
+body.A3               .sheet { width: 297mm; height: 419mm }
+body.A3.landscape     .sheet { width: 420mm; height: 296mm }
+body.A4               .sheet { width: 210mm; height: 296mm }
+body.A4.landscape     .sheet { width: 297mm; height: 209mm }
+body.A5               .sheet { width: 148mm; height: 209mm }
+body.A5.landscape     .sheet { width: 210mm; height: 147mm }
+body.letter           .sheet { width: 216mm; height: 279mm }
+body.letter.landscape .sheet { width: 280mm; height: 215mm }
+body.legal            .sheet { width: 216mm; height: 356mm }
+body.legal.landscape  .sheet { width: 357mm; height: 215mm }
+
+/** Padding area **/
+.sheet.padding-5mm { padding: 5mm;}
+.sheet.padding-10mm { padding: 10mm;}
+.sheet.padding-15mm { padding: 15mm;}
+.sheet.padding-20mm { padding: 20mm;}
+.sheet.padding-25mm { padding: 25mm;}
