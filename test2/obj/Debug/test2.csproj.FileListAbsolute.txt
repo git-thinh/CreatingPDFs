@@ -1,0 +1,10 @@
+C:\git\CreatingPDFs\test2\bin\Debug\test2.exe
+C:\git\CreatingPDFs\test2\bin\Debug\test2.pdb
+C:\git\CreatingPDFs\test2\bin\Debug\BouncyCastle.Crypto.dll
+C:\git\CreatingPDFs\test2\bin\Debug\itextsharp.dll
+C:\git\CreatingPDFs\test2\bin\Debug\itextsharp.xml
+C:\git\CreatingPDFs\test2\obj\Debug\test2.csprojAssemblyReference.cache
+C:\git\CreatingPDFs\test2\obj\Debug\test2.csproj.CoreCompileInputs.cache
+C:\git\CreatingPDFs\test2\obj\Debug\test2.csproj.CopyComplete
+C:\git\CreatingPDFs\test2\obj\Debug\test2.exe
+C:\git\CreatingPDFs\test2\obj\Debug\test2.pdb

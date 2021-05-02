@@ -1,0 +1,10 @@
+C:\git\CreatingPDFs\pdfimg\bin\Debug\pdfimg.exe.config
+C:\git\CreatingPDFs\pdfimg\bin\Debug\pdfimg.exe
+C:\git\CreatingPDFs\pdfimg\bin\Debug\pdfimg.pdb
+C:\git\CreatingPDFs\pdfimg\bin\Debug\Ghostscript.NET.dll
+C:\git\CreatingPDFs\pdfimg\bin\Debug\Ghostscript.NET.xml
+C:\git\CreatingPDFs\pdfimg\obj\Debug\pdfimg.csprojAssemblyReference.cache
+C:\git\CreatingPDFs\pdfimg\obj\Debug\pdfimg.csproj.CoreCompileInputs.cache
+C:\git\CreatingPDFs\pdfimg\obj\Debug\pdfimg.csproj.CopyComplete
+C:\git\CreatingPDFs\pdfimg\obj\Debug\pdfimg.exe
+C:\git\CreatingPDFs\pdfimg\obj\Debug\pdfimg.pdb

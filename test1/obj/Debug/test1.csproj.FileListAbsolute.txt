@@ -4,3 +4,14 @@ C:\Download\pdf\CreatingPDFs\test1\bin\Debug\itextsharp.dll
 C:\Download\pdf\CreatingPDFs\test1\obj\Debug\test1.csprojResolveAssemblyReference.cache
 C:\Download\pdf\CreatingPDFs\test1\obj\Debug\test1.exe
 C:\Download\pdf\CreatingPDFs\test1\obj\Debug\test1.pdb
+C:\git\CreatingPDFs\test1\bin\Debug\test1.exe
+C:\git\CreatingPDFs\test1\bin\Debug\test1.pdb
+C:\git\CreatingPDFs\test1\bin\Debug\itextsharp.dll
+C:\git\CreatingPDFs\test1\obj\Debug\test1.csprojAssemblyReference.cache
+C:\git\CreatingPDFs\test1\obj\Debug\test1.csproj.CoreCompileInputs.cache
+C:\git\CreatingPDFs\test1\obj\Debug\test1.csproj.CopyComplete
+C:\git\CreatingPDFs\test1\obj\Debug\test1.exe
+C:\git\CreatingPDFs\test1\obj\Debug\test1.pdb
+C:\git\CreatingPDFs\test1\bin\Debug\PdfiumViewer.dll
+C:\git\CreatingPDFs\test1\bin\Debug\PdfiumViewer.xml
+C:\git\CreatingPDFs\test1\bin\Debug\nl\PdfiumViewer.resources.dll

@@ -9,6 +9,8 @@ using System.Reflection;
 using iTextSharp.text.pdf.parser;
 using System.Globalization;
 using System.Drawing.Imaging;
+using System.Drawing;
+using PdfiumViewer;
 
 namespace test1
 {
@@ -16,9 +18,142 @@ namespace test1
     {
         static void Main(string[] args)
         {
+            //ExtractImagesFromPDF(@"C:\test\39.pdf", @"C:\test\");
             //test3();
+            //test4();
+            //test5();
+            SplitePDF();
+        }
 
-            ExtractImagesFromPDF(@"C:\test\39.pdf", @"C:\test\");
+        static System.Drawing.Image GetPageImage(int pageNumber, Size size, PdfiumViewer.PdfDocument document, int dpi)
+        {
+            return document.Render(pageNumber - 1, size.Width, size.Height, dpi, dpi, PdfRenderFlags.Annotations);
+        }
+
+        static void RenderPage(string pdfPath, int pageNumber, Size size, string outputPath)
+        {
+            using (var document = PdfiumViewer.PdfDocument.Load(pdfPath))
+            using (var stream = new FileStream(outputPath, FileMode.Create))
+            using (var image = GetPageImage(pageNumber, size, document, 150))
+            {
+                image.Save(stream, ImageFormat.Jpeg);
+            }
+        }
+
+        static void SplitePDF()
+        {
+            string filepath = @"C:\test\39.pdf";
+            string outputPath = @"C:\test\";
+
+            iTextSharp.text.pdf.PdfReader reader = null;
+            int currentPage = 1;
+            int pageCount = 0;
+            //string filepath_New = filepath +"\\PDFDestination\";
+
+            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+            //byte[] arrayofPassword = encoding.GetBytes(ExistingFilePassword);
+            reader = new iTextSharp.text.pdf.PdfReader(filepath);
+            reader.RemoveUnusedObjects();
+            pageCount = reader.NumberOfPages;
+            string ext = System.IO.Path.GetExtension(filepath);
+            for (int i = 1; i <= pageCount; i++)
+            {
+                iTextSharp.text.pdf.PdfReader reader1 = new iTextSharp.text.pdf.PdfReader(filepath);
+                string outfile = filepath.Replace((System.IO.Path.GetFileName(filepath)), (System.IO.Path.GetFileName(filepath).Replace(".pdf", "") + "_" + i.ToString()) + ext);
+                reader1.RemoveUnusedObjects();
+                iTextSharp.text.Document doc = new iTextSharp.text.Document(reader.GetPageSizeWithRotation(currentPage));
+                iTextSharp.text.pdf.PdfCopy pdfCpy = new iTextSharp.text.pdf.PdfCopy(doc, new System.IO.FileStream(outfile, System.IO.FileMode.Create));
+                doc.Open();
+                for (int j = 1; j <= 1; j++)
+                {
+                    iTextSharp.text.pdf.PdfImportedPage page = pdfCpy.GetImportedPage(reader1, currentPage);
+                    pdfCpy.SetFullCompression();
+                    pdfCpy.AddPage(page);
+                    currentPage += 1;
+                }
+                doc.Close();
+                pdfCpy.Close();
+                reader1.Close();
+                reader.Close();
+
+            }
+        }
+
+        static void test5()
+        {
+            string sourcePdf = @"C:\test\39.pdf";
+            string outputPath = @"C:\test\";
+
+            string oldFile = "oldFile.pdf";
+            string newFile = "newFile.pdf";
+
+            // open the reader
+            PdfReader reader = new PdfReader(oldFile);
+            iTextSharp.text.Rectangle size = reader.GetPageSizeWithRotation(1);
+            Document document = new Document(size);
+
+            // open the writer
+            FileStream fs = new FileStream(newFile, FileMode.Create, FileAccess.Write);
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+            document.Open();
+
+            // the pdf content
+            PdfContentByte cb = writer.DirectContent;
+
+            // select the font properties
+            BaseFont bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            cb.SetColorFill(BaseColor.DARK_GRAY);
+            cb.SetFontAndSize(bf, 8);
+
+            // write the text in the pdf content
+            cb.BeginText();
+            string text = "Some random blablablabla...";
+            // put the alignment and coordinates here
+            cb.ShowTextAligned(1, text, 520, 640, 0);
+            cb.EndText();
+            cb.BeginText();
+            text = "Other random blabla...";
+            // put the alignment and coordinates here
+            cb.ShowTextAligned(2, text, 100, 200, 0);
+            cb.EndText();
+
+            // create the new page and add it to the pdf
+            PdfImportedPage page = writer.GetImportedPage(reader, 1);
+            cb.AddTemplate(page, 0, 0);
+
+            // close the streams and voilá the file should be changed :)
+            document.Close();
+            fs.Close();
+            writer.Close();
+            reader.Close();
+        } 
+        
+        static void test4()
+        {
+            string sourcePdf = @"C:\test\1.pdf";
+            string outputPath = @"C:\test\";
+
+            Document document = new Document();
+            PdfWriter.GetInstance(document, new FileStream(sourcePdf, FileMode.Create));
+            document.Open();
+            document.Add(new Paragraph("Hello World"));
+            PdfPTable table = new PdfPTable(3);
+            table.SpacingBefore = 30f;
+            table.SpacingAfter = 30f;
+            PdfPCell cell = new PdfPCell(new Phrase("Header spanning 3 columns"));
+            cell.Colspan = 3;
+            cell.HorizontalAlignment = 1;
+            table.AddCell(cell);
+            table.AddCell("Col 1 Row 1");
+            table.AddCell("Col 2 Row 1");
+            table.AddCell("Col 3 Row 1");
+            table.AddCell("Col 1 Row 2");
+            table.AddCell("Col 2 Row 2");
+            table.AddCell("Col 3 Row 2");
+            document.Add(table);
+            var image = iTextSharp.text.Image.GetInstance("1.jpg");
+            document.Add(image);
+            document.Close();
         }
 
         static void ExtractImagesFromPDF(string sourcePdf, string outputPath)
@@ -37,11 +172,11 @@ namespace test1
                     PdfObject obj = FindImageInPDFDictionary(pg);
                     if (obj != null)
                     {
-
-                        int XrefIndex = Convert.ToInt32(((PRIndirectReference)obj).Number.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                        int XrefIndex = Convert.ToInt32(((PRIndirectReference)obj).Number.ToString(CultureInfo.InvariantCulture));
                         PdfObject pdfObj = pdf.GetPdfObject(XrefIndex);
                         PdfStream pdfStrem = (PdfStream)pdfObj;
                         byte[] bytes = PdfReader.GetStreamBytesRaw((PRStream)pdfStrem);
+
                         if ((bytes != null))
                         {
                             string path = Path.Combine(outputPath, String.Format(@"{0}.jpg", pageNumber));
@@ -244,7 +379,7 @@ namespace test1
                 BaseFont bf = BaseFont.CreateFont(ARIALUNI_TFF, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
                 //Create a specific font object
-                Font f = new Font(bf, 12, Font.NORMAL);
+                var f = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
 
                 //Write some text, the last character is 0x0278 - LATIN SMALL LETTER PHI
                 Doc.Add(new Phrase("Animal 4D+ là ứng dụng cho phép tạo ra mô hình 3D của các loài động vật ngay trên màn hình smartphone, với các hoạt động, cử chỉ y như thật. Đặc biệt ứng dụng sẽ đọc to tên gọi của các loài động vật bằng tiếng Anh, để giúp trẻ có thể nghe rõ và học theo. Animal 4D+ không chỉ giúp trẻ em khám phá được thông tin về các loài động vật, mà còn giúp tạo được hứng thú trong việc học và tiếp cận tiếng Anh", f));

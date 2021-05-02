@@ -1,0 +1,2 @@
+C:\git\CreatingPDFs\test1\obj\x64\Debug\test1.csprojAssemblyReference.cache
+C:\git\CreatingPDFs\test1\obj\x64\Debug\test1.csproj.CoreCompileInputs.cache
